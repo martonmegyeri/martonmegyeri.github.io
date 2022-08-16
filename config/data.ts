@@ -1,6 +1,6 @@
 const data = {
   email: 'megyerimarton@gmail.com',
-  githubUrl: 'https://github.com/megyerimarton',
+  githubUrl: 'https://github.com/martonmegyeri',
   linkedinUrl: 'https://www.linkedin.com/in/marton-megyeri/',
 };
 
