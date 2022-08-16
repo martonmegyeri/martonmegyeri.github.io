@@ -1,0 +1,71 @@
+@use "../../styles/breakpoints";
+
+.footer {
+  padding: 200px 0 20px;
+  font-size: 16px;
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include breakpoints.media-min(md) {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+  }
+
+  .me {
+    font-weight: 700;
+  }
+
+  .linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include breakpoints.media-min(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .emoji {
+      display: inline-block;
+      animation-name: waving;
+      animation-duration: 4000ms;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+      transform-origin: 50% 90%;
+    }
+
+    .links {
+      display: flex;
+      gap: 10px;
+
+      @include breakpoints.media-min(md) {
+        justify-content: flex-end;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@keyframes waving {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(10deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  15% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+}

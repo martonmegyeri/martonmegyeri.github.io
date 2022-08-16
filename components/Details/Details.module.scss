@@ -1,0 +1,26 @@
+@use "../../styles/breakpoints";
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+
+  @include breakpoints.media-min(sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .title {
+    font-size: 22px;
+    margin: 0 0 20px;
+
+    @include breakpoints.media-min(md) {
+      font-size: 26px;
+      margin: 0 0 40px;
+    }
+  }
+
+  .paragraph {
+    margin: 0 0 20px;
+    font-size: 16px;
+  }
+}

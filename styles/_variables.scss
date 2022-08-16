@@ -1,0 +1,10 @@
+@use "./colors";
+
+$font-family-primary: "MontserratVariable", arial, helvetica, sans-serif;
+
+$z-index-base: 0;
+$z-index-above: 10;
+$z-index-below: -10;
+
+$zindex-header: $z-index-above;
+$zindex-modal: $z-index-above + $zindex-header;

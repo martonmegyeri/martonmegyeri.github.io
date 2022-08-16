@@ -1,0 +1,38 @@
+{
+  "name": "martonmegyeri",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource/merriweather": "^4.5.12",
+    "@fontsource/montserrat": "^4.5.11",
+    "@react-three/drei": "^9.19.6",
+    "@react-three/fiber": "^8.3.0",
+    "classnames": "^2.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "next": "12.1.6",
+    "normalize.css": "^8.0.1",
+    "prettier": "^2.7.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-spring": "^9.5.2",
+    "three": "^0.143.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.0.0",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "@types/three": "^0.143.0",
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.1.6",
+    "sass": "^1.52.3",
+    "typescript": "4.7.4"
+  }
+}
