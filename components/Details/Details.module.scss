@@ -3,7 +3,7 @@
 .details {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 20px;
 
   @include breakpoints.media-min(sm) {
     grid-template-columns: 1fr 1fr;
@@ -20,7 +20,11 @@
   }
 
   .paragraph {
-    margin: 0 0 20px;
     font-size: 16px;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 }

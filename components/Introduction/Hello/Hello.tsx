@@ -26,7 +26,7 @@ const Font = (props: ThreeElements['mesh']) => {
       {...props}
       font="/merriweather.woff"
       characters="ehlo"
-      fontSize={4}
+      fontSize={5}
       letterSpacing={-0.05}
       color="#000"
       onPointerOver={() => setHovered(true)}
