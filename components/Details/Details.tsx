@@ -16,7 +16,7 @@ const Details = () => {
             <Link href="https://spiritful.hu" target="_blank" rel="noopener noreferrer">
               spiritful.hu
             </Link>{' '}
-            - custom built Shopify storefront with NextJS
+            - custom built Shopify storefront&nbsp;with&nbsp;NextJS
           </p>
         </Reveal>
       </div>

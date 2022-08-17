@@ -1,5 +1,17 @@
+@use "../../../styles/breakpoints";
+
+$base-width: 400px;
+$base-height: 250px;
+$base-margin: -50px;
+
 .hello {
-  width: 400px;
-  height: 250px;
-  margin: -50px -50px 0 -50px;
+  width: $base-width * 0.625;
+  height: $base-height * 0.625;
+  margin: $base-margin * 0.625 $base-margin * 0.625 0 $base-margin * 0.625;
+
+  @include breakpoints.media-min(md) {
+    width: $base-width;
+    height: $base-height;
+    margin: $base-margin $base-margin 0 $base-margin;
+  }
 }

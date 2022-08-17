@@ -13,24 +13,26 @@ type Props = HTMLProps<HTMLElement> & {
 function Link({ as, children, className = '', href, external, ...rest }: Props, ref: any) {
   const props = {
     ref,
+    ...rest,
     className: classnames(styles.link, {
       [className]: !!className,
     }),
-    ...rest,
+    children: (
+      <>
+        <span className={styles.text}>{children}</span>
+        <span className={styles.visual}>{children}</span>
+      </>
+    ),
   };
 
   if (href && external) {
-    return (
-      <a href={href} {...props}>
-        {children}
-      </a>
-    );
+    return <a href={href} {...props} />;
   }
 
   if (href) {
     return (
       <NextLink href={href}>
-        <a {...props}>{children}</a>
+        <a {...props} />
       </NextLink>
     );
   }

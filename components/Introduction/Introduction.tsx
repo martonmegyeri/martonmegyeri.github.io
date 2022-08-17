@@ -9,10 +9,10 @@ const Introduction = () => {
       <Hello />
       <p className={styles.subTitle}>
         <Reveal as="span" delay={1000}>
-          I&lsquo;m Marton Megyeri, a frontend developer
+          I&lsquo;m Marton Megyeri, a&nbsp;frontend&nbsp;developer
         </Reveal>
         <Reveal as="span" delay={1250}>
-          who loves creating outstanding web experiences.
+          who loves creating outstanding&nbsp;web&nbsp;experiences.
         </Reveal>
       </p>
     </Container>

@@ -4,9 +4,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 50vh;
-  padding-top: 100px;
-  padding-bottom: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @include breakpoints.media-min(sm) {
+    padding-bottom: 100px;
+  }
+
+  @include breakpoints.media-min(md) {
+    min-height: 50vh;
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
 
   .subTitle {
     margin: 0;
