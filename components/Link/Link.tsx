@@ -20,7 +20,9 @@ function Link({ as, children, className = '', href, external, ...rest }: Props, 
     children: (
       <>
         <span className={styles.text}>{children}</span>
-        <span className={styles.visual}>{children}</span>
+        <span className={styles.visual} aria-hidden="true">
+          {children}
+        </span>
       </>
     ),
   };

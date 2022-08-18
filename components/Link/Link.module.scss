@@ -1,7 +1,7 @@
 @use "../../styles/colors";
 @use "../../styles/mixins";
 
-$transition-timing: cubic-bezier(0, 0.1, 0.1, 1);
+$transition-timing: cubic-bezier(0.23, 0, 0.1, 1);
 $transition-duration: 600ms;
 
 .link {
