@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import FadeIn from '../FadeIn/FadeIn';
-import Footer from '../Footer/Footer';
 import styles from './Layout.module.scss';
 
 type Props = {
@@ -12,7 +11,6 @@ const Layout = ({ children }: Props) => {
     <FadeIn>
       <div className={styles.layout}>
         <main>{children}</main>
-        <Footer />
       </div>
     </FadeIn>
   );
