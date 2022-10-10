@@ -1,7 +1,8 @@
-import Layout from '@/components/Layout/Layout';
-import '@fontsource/montserrat/variable.css';
+import '@fontsource/major-mono-display/index.css';
+import '@fontsource/raleway/variable.css';
 import type { AppProps } from 'next/app';
 import 'normalize.css';
+import Layout from '~/components/Layout';
 import '../styles/common.scss';
 import '../styles/globals.css';
 

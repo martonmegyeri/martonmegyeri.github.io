@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import FadeIn from '../FadeIn/FadeIn';
+import FadeIn from '../FadeIn';
 import styles from './Layout.module.scss';
 
 type Props = {

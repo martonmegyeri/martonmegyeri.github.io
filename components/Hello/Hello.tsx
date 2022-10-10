@@ -24,7 +24,6 @@ const Font = (props: ThreeElements['mesh']) => {
   return (
     <Text
       {...props}
-      font="/merriweather.woff"
       characters="ehlo"
       fontSize={5}
       letterSpacing={-0.05}

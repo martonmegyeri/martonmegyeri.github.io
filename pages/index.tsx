@@ -1,7 +1,7 @@
-import Details from '@/components/Details/Details';
-import Introduction from '@/components/Introduction/Introduction';
-import SEO from '@/components/SEO/SEO';
 import type { NextPage } from 'next';
+import Details from '~/components/Details/Details';
+import Hero from '~/components/Hero/Hero';
+import SEO from '~/components/SEO/SEO';
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         title="Marton Megyeri"
         description="Marton Megyeri - a frontend developer who loves creating outstanding web experiences."
       />
-      <Introduction />
+      <Hero />
       <Details />
     </>
   );

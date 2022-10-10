@@ -7,10 +7,10 @@ html {
   line-height: 1.5;
 
   body {
+    background-color: colors.$neutral-900;
     font-family: variables.$font-family-primary;
-    color: colors.$neutral-800;
+    color: colors.$white;
     overflow-x: hidden;
-    overflow-y: overlay;
   }
 }
 
@@ -20,7 +20,7 @@ html {
   scrollbar-width: thin; // FF
 
   &::selection {
-    background: colors.$black;
+    background: rgba(255, 255, 255, 0.1);
     color: colors.$white;
   }
 

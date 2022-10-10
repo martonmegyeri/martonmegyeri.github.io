@@ -10,10 +10,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fontsource/merriweather": "^4.5.12",
-    "@fontsource/montserrat": "^4.5.11",
+    "@fontsource/major-mono-display": "^4.5.11",
+    "@fontsource/raleway": "^4.5.11",
     "@react-three/drei": "^9.19.6",
     "@react-three/fiber": "^8.3.0",
+    "@react-three/rapier": "^0.7.6",
     "classnames": "^2.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",

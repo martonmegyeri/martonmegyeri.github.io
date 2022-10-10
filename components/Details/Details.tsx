@@ -1,7 +1,7 @@
-import Link from '@/components/Link/Link';
-import data from '@/config/data';
-import Container from '../Container/Container';
-import Reveal from '../Reveal/Reveal';
+import Container from '~/components/Container';
+import Link from '~/components/Link';
+import Reveal from '~/components/Reveal/Reveal';
+import data from '~/config/data';
 import styles from './Details.module.scss';
 
 const Details = () => {

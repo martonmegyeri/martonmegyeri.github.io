@@ -1,7 +1,7 @@
-import { usePrefersReducedMotion } from '@/utils/use-prefers-reduced-motion';
-import useVisibility from '@/utils/use-visibility';
 import { HTMLProps, useRef } from 'react';
 import { animated, config, useSpring } from 'react-spring';
+import { usePrefersReducedMotion } from '~/utils/use-prefers-reduced-motion';
+import useVisibility from '~/utils/use-visibility';
 
 type Props = HTMLProps<HTMLDivElement | HTMLSpanElement> & {
   as?: 'div' | 'span';
