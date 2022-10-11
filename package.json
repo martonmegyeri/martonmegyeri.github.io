@@ -18,7 +18,8 @@
     "classnames": "^2.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "next": "12.1.6",
+    "framer-motion": "^7.5.3",
+    "next": "^12.3.1",
     "normalize.css": "^8.0.1",
     "prettier": "^2.7.1",
     "react": "18.2.0",
@@ -32,7 +33,7 @@
     "@types/react-dom": "18.0.5",
     "@types/three": "^0.143.0",
     "eslint": "8.18.0",
-    "eslint-config-next": "12.1.6",
+    "eslint-config-next": "^12.3.1",
     "sass": "^1.52.3",
     "typescript": "4.7.4"
   }

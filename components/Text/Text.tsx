@@ -8,12 +8,10 @@ type Props = {
   darker?: boolean;
 };
 
-const Text = ({ children, secondary, darker }: Props) => {
-  return (
-    <span className={classNames(styles.text, { [styles.secondary]: secondary, [styles.darker]: darker })}>
-      {children}
-    </span>
-  );
-};
+const Text = ({ children, secondary, darker }: Props) => (
+  <span className={classNames(styles.text, { [styles.secondary]: secondary, [styles.darker]: darker })}>
+    {children}
+  </span>
+);
 
 export default Text;

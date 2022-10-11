@@ -6,14 +6,12 @@ type Props = {
   children: ReactNode;
 };
 
-const Layout = ({ children }: Props) => {
-  return (
-    <FadeIn>
-      <div className={styles.layout}>
-        <main>{children}</main>
-      </div>
-    </FadeIn>
-  );
-};
+const Layout = ({ children }: Props) => (
+  <FadeIn>
+    <div className={styles.layout}>
+      <main>{children}</main>
+    </div>
+  </FadeIn>
+);
 
 export default Layout;

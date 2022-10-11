@@ -12,7 +12,7 @@ export type HeadingProps = Omit<React.HTMLProps<HTMLElement>, 'ref'> & {
   className?: string;
 };
 
-function Button({ rank, as, children, className = '', ...rest }: HeadingProps, ref: any) {
+function Heading({ rank, as, children, className = '', ...rest }: HeadingProps, ref: any) {
   const Element = as || `h${rank}`;
 
   return (
@@ -28,4 +28,4 @@ function Button({ rank, as, children, className = '', ...rest }: HeadingProps, r
   );
 }
 
-export default forwardRef(Button);
+export default forwardRef(Heading);

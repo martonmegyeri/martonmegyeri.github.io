@@ -1,5 +1,5 @@
+import { motion } from 'framer-motion';
 import { HTMLProps, useRef } from 'react';
-import { animated, config, useSpring } from 'react-spring';
 import { usePrefersReducedMotion } from '~/utils/use-prefers-reduced-motion';
 import useVisibility from '~/utils/use-visibility';
 
@@ -9,25 +9,23 @@ type Props = HTMLProps<HTMLDivElement | HTMLSpanElement> & {
   delay?: number;
 };
 
-const Reveal = ({ children, delay = 0, as = 'div', className, ...rest }: Props) => {
+export default function Reveal({ children, delay = 0, as = 'div', className, ...rest }: Props) {
   const ref = useRef<HTMLDivElement | HTMLSpanElement | null>(null);
   const isVisible = useVisibility(ref);
   const prefersReducedMotion = usePrefersReducedMotion();
-  const transition = useSpring({
-    delay,
-    opacity: isVisible ? 1 : 0,
-    transform: isVisible ? 'translate3d(0, 0px, 0) skewY(0deg)' : 'translate3d(0, 80%, 0) skewY(3deg)',
-    immediate: prefersReducedMotion,
-    config: config.gentle,
-  });
 
-  const Element = animated[as];
+  const Element = motion(as);
 
   return (
-    <Element ref={ref as any} {...rest} style={{ display: 'inline-block', ...transition }}>
+    <Element
+      ref={ref}
+      {...(rest as any)}
+      style={{ display: 'inline-block' }}
+      transition={{ delay, type: 'spring', damping: 10, mass: 0.75, stiffness: 100 }}
+      initial={{ opacity: 0, y: '80%', skewY: '3deg' }}
+      whileInView={{ opacity: 1, y: '0%', skewY: '0deg' }}
+    >
       {children}
     </Element>
   );
-};
-
-export default Reveal;
+}

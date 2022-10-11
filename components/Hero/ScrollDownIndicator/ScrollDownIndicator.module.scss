@@ -1,0 +1,67 @@
+@use "sass:math";
+
+@mixin rotated-text($num-letters: 100, $angle-span: 180deg, $angle-offset: 0deg) {
+  $angle-per-char: $angle-span / $num-letters;
+
+  @for $i from 1 through $num-letters {
+    > span:nth-child(#{$i}) {
+      transform: rotate($angle-offset + $angle-per-char * $i);
+    }
+  }
+}
+
+$width: 7vw;
+
+.scrollDownIndicator {
+  position: relative;
+  width: $width;
+  height: $width;
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.5vw;
+    height: 1.5vw;
+    filter: invert(1); // it's black by default
+  }
+
+  .rotatingPart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    animation: rotate 15s linear infinite;
+
+    .chars {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: math.div($width, 2);
+      height: math.div($width, 2);
+      font-size: 0.9vw;
+      font-family: monospace;
+      text-transform: uppercase;
+      @include rotated-text(28, 360deg, 0deg);
+
+      > span {
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform-origin: bottom center;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

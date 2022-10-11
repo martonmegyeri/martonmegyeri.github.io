@@ -8,14 +8,12 @@ type Props = HTMLProps<HTMLDivElement> & {
   as?: keyof JSX.IntrinsicElements;
 };
 
-function Container({ className = '', children, as = 'div', ...rest }: Props, ref: any) {
+function Container({ className, children, as = 'div', ...rest }: Props, ref: any) {
   return createElement(
     as,
     {
       ref,
-      className: classNames(styles.container, {
-        [className]: !!className,
-      }),
+      className: classNames(styles.container, className),
       ...rest,
     },
     children
