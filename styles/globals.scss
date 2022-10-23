@@ -36,10 +36,10 @@ a {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(colors.$neutral-800, 0.4);
+      background-color: rgba(colors.$white, 0.3);
 
       &:hover {
-        background-color: rgba(colors.$neutral-800, 0.6);
+        background-color: rgba(colors.$white, 0.4);
       }
     }
   }

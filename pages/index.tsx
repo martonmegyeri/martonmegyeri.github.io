@@ -1,8 +1,11 @@
 import type { NextPage } from 'next';
-import Details from '~/components/Details/Details';
-import Hero from '~/components/Hero/Hero';
-import SEO from '~/components/SEO/SEO';
-import WhoAmI from '~/components/WhoAmI/WhoAmI';
+import Details from '~/components/Details';
+import Heading from '~/components/Heading';
+import Hero from '~/components/Hero';
+import HorizontalParallaxText from '~/components/HorizontalParallaxText';
+import SEO from '~/components/SEO';
+import Spacer from '~/components/Spacer';
+import WhoAmI from '~/components/WhoAmI';
 
 const Home: NextPage = () => (
   <>
@@ -12,6 +15,14 @@ const Home: NextPage = () => (
     />
     <Hero />
     <WhoAmI />
+    <Spacer size={10} />
+    <HorizontalParallaxText clones={5} baseVelocity={5}>
+      <Heading rank={2}>Lorem ipsum&nbsp;</Heading>
+    </HorizontalParallaxText>
+    <HorizontalParallaxText clones={5} baseVelocity={-5}>
+      <Heading rank={2}>Lorem ipsum&nbsp;</Heading>
+    </HorizontalParallaxText>
+    <Spacer size={10} />
     <Details />
   </>
 );

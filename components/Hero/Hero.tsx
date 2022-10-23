@@ -1,7 +1,7 @@
 import Container from '../Container';
 import Heading from '../Heading';
 import Reveal from '../Reveal';
-import { Coma, Dot, QuotationMark } from '../Text';
+import { Coma, Dot, QuotationMark } from '../SecondaryText';
 import styles from './Hero.module.scss';
 import ScrollDownIndicator from './ScrollDownIndicator/ScrollDownIndicator';
 

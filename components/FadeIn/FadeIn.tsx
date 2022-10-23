@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -20,15 +20,5 @@ const FadeIn = ({ children }: Props) => (
     {children}
   </motion.div>
 );
-
-const useIsLoaded = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  return isLoaded;
-};
 
 export default FadeIn;

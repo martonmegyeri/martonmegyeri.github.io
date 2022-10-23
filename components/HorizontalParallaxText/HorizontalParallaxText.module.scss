@@ -1,0 +1,13 @@
+.horizontalParallaxText {
+  .scroller {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+
+    > span {
+      display: flex;
+      font-style: italic;
+      opacity: 0.4;
+    }
+  }
+}

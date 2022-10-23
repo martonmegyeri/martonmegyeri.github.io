@@ -7,7 +7,9 @@ export default function WhoAmI() {
   return (
     <Container className={styles.whoAmI}>
       <Reveal>
-        <Heading rank={2}>Who am I?</Heading>
+        <Heading rank={2} className={styles.title}>
+          Who am I?
+        </Heading>
       </Reveal>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum repellat qui architecto, laboriosam explicabo
