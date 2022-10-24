@@ -1,0 +1,28 @@
+@use "../../styles/mixins";
+
+.navigation {
+  position: fixed;
+  top: 4vw;
+  right: 4vw;
+  text-align: right;
+
+  > ul {
+    @include mixins.reset-list;
+    display: grid;
+    gap: 1vw;
+
+    > li {
+      > button {
+        @include mixins.reset-button;
+        font-size: 1.2vw;
+        text-transform: uppercase;
+        font-weight: 500;
+        opacity: 0.4;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,7 @@ import styles from './WhoAmI.module.scss';
 export default function WhoAmI() {
   return (
     <Container className={styles.whoAmI}>
-      <Reveal>
+      <Reveal delay={0.2}>
         <Heading rank={2} className={styles.title}>
           Who am I?
         </Heading>

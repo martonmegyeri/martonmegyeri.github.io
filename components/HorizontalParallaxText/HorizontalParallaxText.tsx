@@ -28,7 +28,10 @@ export default function HorizontalParallaxText({ children, clones = 5, baseVeloc
     });
     observer.observe(childRef.current);
 
-    return () => observer.unobserve(childRef.current as HTMLDivElement);
+    return () => {
+      if (!scrollerRef.current || !childRef.current) return;
+      observer.unobserve(childRef.current as HTMLDivElement);
+    };
   }, []);
 
   return (
