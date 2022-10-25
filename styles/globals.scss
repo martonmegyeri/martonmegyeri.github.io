@@ -36,7 +36,7 @@ a {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(colors.$white, 0.3);
+      background-color: rgba(colors.$white, 0.25);
 
       &:hover {
         background-color: rgba(colors.$white, 0.4);

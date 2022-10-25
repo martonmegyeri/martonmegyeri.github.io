@@ -2,6 +2,7 @@
 
 .navigation {
   position: fixed;
+  z-index: 10;
   top: 4vw;
   right: 4vw;
   text-align: right;
@@ -9,18 +10,44 @@
   > ul {
     @include mixins.reset-list;
     display: grid;
+    justify-items: end;
     gap: 1vw;
 
     > li {
       > button {
         @include mixins.reset-button;
-        font-size: 1.2vw;
+        display: flex;
+        align-items: center;
+        gap: 0.75vw;
+        font-size: 1vw;
         text-transform: uppercase;
         font-weight: 500;
         opacity: 0.4;
+        cursor: pointer;
+        transition: opacity 400ms linear;
+
+        &:hover {
+          opacity: 1;
+          transition: opacity 100ms linear;
+        }
 
         &.active {
           opacity: 1;
+
+          .arrow {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            transition: opacity 400ms linear, transform 800ms cubic-bezier(0.2, 1, 0.22, 1);
+          }
+        }
+
+        .arrow {
+          width: 1.5vw;
+          height: 1.5vw;
+          filter: invert(1);
+          opacity: 0;
+          transform: translate3d(-1vw, 0, 0);
+          transition: opacity 100ms linear, transform 0ms 100ms;
         }
       }
     }

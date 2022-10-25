@@ -1,4 +1,8 @@
 import classNames from 'classnames';
+import Image from 'next/future/image';
+import shallow from 'zustand/shallow';
+import arrow from '~/assets/images/arrow-right.svg';
+import scrollToRef from '~/utils/scroll-to-ref';
 import styles from './Navigation.module.scss';
 import { NavigationId, useNavigationStore } from './store';
 
@@ -10,10 +14,14 @@ type Props = {
 };
 
 export default function Navigation({ elements }: Props) {
-  const visibleSection = useNavigationStore(state => state.visibleSection);
+  const [visibleSection, sectionRefs] = useNavigationStore(state => [state.visibleSection, state.sectionRefs], shallow);
 
   const handleClick = (id: NavigationId) => {
-    console.log(id);
+    const ref = sectionRefs[id];
+
+    if (!ref) return;
+
+    scrollToRef(ref);
   };
 
   return (
@@ -25,6 +33,7 @@ export default function Navigation({ elements }: Props) {
               onClick={() => handleClick(element.id)}
               className={classNames({ [styles.active]: visibleSection === element.id })}
             >
+              <Image src={arrow} unoptimized priority alt="" className={styles.arrow} />
               {element.label}
             </button>
           </li>

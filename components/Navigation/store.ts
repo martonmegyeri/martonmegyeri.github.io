@@ -2,28 +2,42 @@ import create from 'zustand';
 
 export type NavigationId = string;
 
-interface NavigationState {
+type SectionRef = React.RefObject<HTMLElement>;
+
+type NavigationState = {
   visibleSection: NavigationId | null;
-  addVisibleSection: (id: NavigationId) => void;
-  removeVisibleSection: (id: NavigationId) => void;
-}
+  sectionRefs: {
+    [id: NavigationId]: SectionRef;
+  };
+  changeSectionVisibility: (id: NavigationId, isVisible: boolean) => void;
+  saveSectionRef: (id: NavigationId, ref: SectionRef) => void;
+};
 
 export const useNavigationStore = create<NavigationState>(set => {
   const visibleSectionsSet = new Set<NavigationId>();
 
-  const addVisibleSection = (id: NavigationId) => {
-    visibleSectionsSet.add(id);
-    set({ visibleSection: Array.from(visibleSectionsSet).pop() || null });
+  const changeSectionVisibility = (id: NavigationId, isVisible: boolean) => {
+    if (isVisible) {
+      visibleSectionsSet.add(id);
+    } else {
+      visibleSectionsSet.delete(id);
+    }
+    set({ visibleSection: Array.from(visibleSectionsSet).pop() });
   };
 
-  const removeVisibleSection = (id: NavigationId) => {
-    visibleSectionsSet.delete(id);
-    set({ visibleSection: Array.from(visibleSectionsSet).pop() || null });
+  const saveSectionRef = (id: string, ref: SectionRef) => {
+    set(state => ({
+      sectionRefs: {
+        ...state.sectionRefs,
+        [id]: ref,
+      },
+    }));
   };
 
   return {
     visibleSection: null,
-    addVisibleSection,
-    removeVisibleSection,
+    sectionRefs: {},
+    changeSectionVisibility,
+    saveSectionRef,
   };
 });

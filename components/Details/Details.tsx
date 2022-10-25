@@ -1,7 +1,7 @@
 import Container from '~/components/Container';
 import Link from '~/components/Link';
 import Reveal from '~/components/Reveal/Reveal';
-import data from '~/config/data';
+import globalConfig from '~/config/global';
 import Heading from '../Heading';
 import styles from './Details.module.scss';
 
@@ -26,11 +26,11 @@ const Details = () => (
       </Heading>
       <p className={styles.paragraph}>
         <Reveal delay={0.4} as="span">
-          You can find me on <Link href={data.githubUrl}>github</Link> and <Link href={data.linkedinUrl}>linkedin</Link>
-          ,
+          You can find me on <Link href={globalConfig.githubUrl}>github</Link> and{' '}
+          <Link href={globalConfig.linkedinUrl}>linkedin</Link>,
         </Reveal>
         <Reveal delay={0.4} as="span">
-          or just send me an email at <Link href={`mailto:${data.email}`}>{data.email}</Link>
+          or just send me an email at <Link href={`mailto:${globalConfig.email}`}>{globalConfig.email}</Link>
         </Reveal>
       </p>
     </div>

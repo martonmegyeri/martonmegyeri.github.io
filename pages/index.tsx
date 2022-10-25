@@ -31,12 +31,18 @@ const Home: NextPage = () => (
 
     <Spacer size={10} />
 
-    <HorizontalParallaxText clones={5} baseVelocity={5}>
-      <Heading rank={2}>Lorem ipsum&nbsp;</Heading>
-    </HorizontalParallaxText>
-    <HorizontalParallaxText clones={5} baseVelocity={-5}>
-      <Heading rank={2}>Lorem ipsum&nbsp;</Heading>
-    </HorizontalParallaxText>
+    <NavigationSection id={navElements[1].id}>
+      <HorizontalParallaxText clones={8} baseVelocity={5}>
+        <Heading rank={2} style={{ letterSpacing: '0.02em' }}>
+          Projects&nbsp;&nbsp;
+        </Heading>
+      </HorizontalParallaxText>
+      <HorizontalParallaxText clones={8} baseVelocity={-5}>
+        <Heading rank={2} style={{ letterSpacing: '0.02em' }}>
+          Projects&nbsp;&nbsp;
+        </Heading>
+      </HorizontalParallaxText>
+    </NavigationSection>
 
     <Spacer size={10} />
 
