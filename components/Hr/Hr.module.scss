@@ -1,8 +1,6 @@
-@use "../../styles/colors";
-
 .hr {
   height: 1px;
   width: 100%;
-  background: colors.$white;
+  background: var(--color-text);
   opacity: 0.25;
 }

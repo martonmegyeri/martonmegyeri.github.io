@@ -1,4 +1,3 @@
-@use "../../styles/colors";
 @use "../../styles/mixins";
 
 $transition-timing: cubic-bezier(0.23, 0, 0.1, 1);
@@ -22,16 +21,18 @@ $transition-duration: 600ms;
     }
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.08em;
-    opacity: 0.25;
-    background-color: currentColor;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   bottom: 0.2em;
+  //   left: 0;
+  //   z-index: -1;
+  //   width: 100%;
+  //   height: 0.125em;
+  //   opacity: 1;
+  //   transform: skewY(1.2deg);
+  //   background-color: var(--color-orange);
+  // }
 
   .text {
     transition: transform $transition-duration $transition-timing;
@@ -44,5 +45,18 @@ $transition-duration: 600ms;
     height: 100%;
     transform: translate3d(0, 100%, 0);
     transition: transform $transition-duration $transition-timing;
+  }
+
+  .svgLine {
+    position: absolute;
+    z-index: -1;
+    bottom: -0.1em;
+    left: 0;
+
+    > path {
+      stroke: var(--color-orange);
+      stroke-linecap: round;
+      opacity: 0.8;
+    }
   }
 }

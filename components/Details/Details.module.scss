@@ -14,10 +14,11 @@
   }
 
   .paragraph {
-    font-size: 2vw;
+    font-size: max(2vw, 16px);
     margin: 0;
 
     &:not(:last-child) {
+      font-size: max(1vw, 8px);
       margin-bottom: 1vw;
     }
   }

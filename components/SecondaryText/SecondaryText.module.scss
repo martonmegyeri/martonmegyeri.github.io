@@ -1,7 +1,4 @@
-@use "../../styles/variables";
-@use "../../styles/colors";
-
 .secondaryText {
-  font-family: variables.$font-family-secondary;
+  font-family: var(--font-family-secondary);
   opacity: 0.4;
 }
