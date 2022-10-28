@@ -29,7 +29,7 @@ export default function ScrollDownIndicator(props: Props) {
           <span>w</span>
           <span>n</span>
           <span> </span>
-          <span>&bull;</span>
+          <span className={styles.bullet}>&bull;</span>
           <span> </span>
           <span>S</span>
           <span>c</span>
@@ -43,7 +43,7 @@ export default function ScrollDownIndicator(props: Props) {
           <span>w</span>
           <span>n</span>
           <span> </span>
-          <span>&bull;</span>
+          <span className={styles.bullet}>&bull;</span>
           <span> </span>
         </div>
       </motion.div>

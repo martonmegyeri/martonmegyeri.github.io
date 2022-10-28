@@ -51,6 +51,10 @@ $width: 7vw;
         left: 0;
         top: 0;
         transform-origin: bottom center;
+
+        &.bullet {
+          opacity: 0.4;
+        }
       }
     }
   }
