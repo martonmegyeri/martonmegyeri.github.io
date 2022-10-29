@@ -1,9 +1,9 @@
-.whoAmI {
+.projects {
+  --color-text-accent: var(--color-purple);
+
   .title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 4vw;
+    text-align: center;
   }
 
   p {

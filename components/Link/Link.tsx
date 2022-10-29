@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 import NextLink from 'next/link';
 import React, { ForwardedRef, forwardRef, HTMLProps, ReactNode } from 'react';
+import useIsClient from '~/utils/use-is-client';
 import styles from './Link.module.scss';
 
 type Props = HTMLProps<HTMLAnchorElement> & {
@@ -37,11 +38,9 @@ function Link(
   return React.createElement(as || 'button', { ...rest, ref, className }, <Children>{children}</Children>);
 }
 
-const MIN = 0;
-const MAX = 100;
-
 const Children = ({ children }: Pick<Props, 'children'>) => {
-  const random = Math.floor(Math.random() * (MAX - MIN + 1) + MIN);
+  const positionX = getRandomPositionXValue();
+  const isClient = useIsClient();
 
   return (
     <>
@@ -51,17 +50,27 @@ const Children = ({ children }: Pick<Props, 'children'>) => {
           {children}
         </span>
       </span>
-      <div
-        className={styles.underline}
-        style={
-          {
-            '-webkit-mask-position': `${random}% 50%`,
-            'mask-position': `${random}% 50%`,
-          } as any
-        }
-      />
+      {isClient && (
+        <span
+          className={styles.underline}
+          style={
+            {
+              WebkitMaskPosition: `${positionX}% 50%`,
+              maskPosition: `${positionX}% 50%`,
+            } as any
+          }
+        />
+      )}
     </>
   );
 };
+
+function getRandomPositionXValue() {
+  if (typeof window === 'undefined') return 0;
+
+  const MIN = 0;
+  const MAX = 100;
+  return Math.floor(Math.random() * (MAX - MIN + 1) + MIN);
+}
 
 export default forwardRef(Link);

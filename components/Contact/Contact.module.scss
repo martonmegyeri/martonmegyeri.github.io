@@ -1,0 +1,30 @@
+@use "../../styles/breakpoints";
+
+.contact {
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4vw;
+  }
+
+  p {
+    margin-top: 0;
+    font-size: max(2vw, 16px);
+    line-height: 1.6;
+    max-width: max(500px, 60%);
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .paragraph {
+    margin: 0;
+
+    &:not(:last-child) {
+      font-size: max(1vw, 8px);
+      margin-bottom: 1vw;
+    }
+  }
+}

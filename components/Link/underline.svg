@@ -1,3 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="40" viewBox="0 0 500 40" fill="none">
-  <path d="M2 20 Q 125 28 250 20 T 498 20" stroke="currentColor" stroke-width="8" />
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="40" viewBox="0 0 600 40" fill="none">
+  <path d="M 5 15 Q 20 25 50 20 T 200 20" stroke="currentColor" stroke-width="7" />
+  <path d="M 200 20 Q 250 25 300 20 T 400 18" stroke="currentColor" stroke-width="7" />
+  <path d="M 400 18 Q 520 25 550 20 T 595 25" stroke="currentColor" stroke-width="7" />
 </svg>

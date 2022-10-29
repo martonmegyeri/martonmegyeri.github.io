@@ -2,12 +2,18 @@ import Container from '../Container';
 import Heading from '../Heading';
 import Reveal from '../Reveal';
 import { Coma, Dot, QuotationMark } from '../SecondaryText';
+import Spacer from '../Spacer';
+import Background from './Background/Background';
 import styles from './Hero.module.scss';
 import ScrollDownIndicator from './ScrollDownIndicator/ScrollDownIndicator';
 
 const Hero = () => (
-  <Container>
-    <div className={styles.hero}>
+  <div className={styles.hero}>
+    <Spacer size={10} />
+
+    <Background />
+
+    <Container>
       <Heading rank={1}>
         <Reveal delay={0.4}>
           Hi
@@ -24,8 +30,8 @@ const Hero = () => (
         </Reveal>
       </Heading>
       <ScrollDownIndicator className={styles.scrollDownIndicator} />
-    </div>
-  </Container>
+    </Container>
+  </div>
 );
 
 export default Hero;
