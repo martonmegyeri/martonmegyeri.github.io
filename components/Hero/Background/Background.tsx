@@ -1,34 +1,39 @@
-import { Canvas, ThreeElements, useThree } from '@react-three/fiber';
+import { Canvas, ThreeElements, useFrame } from '@react-three/fiber';
+import { useRef } from 'react';
+import * as THREE from 'three';
 import styles from './Background.module.scss';
+import Plane from './Plane/Plane';
 
 export default function Background() {
   return (
     <div className={styles.background}>
       <Canvas camera={{ fov: 45, position: [0, 0, 10] }}>
         <ambientLight intensity={1} />
-        <Sphere position={[6, 3, 0]} />
+        <Sphere position={[5, 3.5, 0]} />
         <Plane />
       </Canvas>
     </div>
   );
 }
 
-function Sphere(props: ThreeElements['mesh']) {
-  return (
-    <mesh {...props}>
-      <sphereBufferGeometry args={[6, 16, 16]} />
-      <meshStandardMaterial color="lightcoral" />
-    </mesh>
-  );
-}
+function Sphere({ position, ...props }: ThreeElements['mesh']) {
+  const meshRef = useRef<THREE.Mesh>(null);
 
-function Plane() {
-  const { viewport } = useThree();
+  useFrame(({ mouse }) => {
+    if (!meshRef.current || !position) return;
+
+    const [initialPosX, initialPosY] = position as [number, number, number];
+    const x = initialPosX - mouse.x;
+    const y = initialPosY - mouse.y / 2;
+
+    const newPosition = new THREE.Vector3(x, y, 0);
+    meshRef.current.position.lerp(newPosition, 0.05);
+  });
 
   return (
-    <mesh>
-      <planeBufferGeometry args={[viewport.width, viewport.height]} />
-      <meshStandardMaterial color="#333" />
+    <mesh ref={meshRef} {...props}>
+      <sphereBufferGeometry args={[6, 32, 32]} />
+      <meshStandardMaterial color="lightcoral" wireframe />
     </mesh>
   );
 }

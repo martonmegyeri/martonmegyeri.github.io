@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  pointer-events: none;
 
   .scrollDownIndicator {
     margin-top: 5vw;

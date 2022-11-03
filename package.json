@@ -19,6 +19,9 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "framer-motion": "^7.5.3",
+    "glsl-noise": "0.0.0",
+    "glslify": "^7.1.1",
+    "leva": "^0.9.34",
     "next": "^12.3.1",
     "normalize.css": "^8.0.1",
     "prettier": "^2.7.1",
@@ -35,6 +38,8 @@
     "@types/three": "^0.143.0",
     "eslint": "8.18.0",
     "eslint-config-next": "^12.3.1",
+    "glslify-loader": "^2.0.0",
+    "raw-loader": "^4.0.2",
     "sass": "^1.52.3",
     "typescript": "4.7.4"
   }

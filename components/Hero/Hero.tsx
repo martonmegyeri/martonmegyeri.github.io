@@ -31,6 +31,8 @@ const Hero = () => (
       </Heading>
       <ScrollDownIndicator className={styles.scrollDownIndicator} />
     </Container>
+
+    <Spacer size={5} />
   </div>
 );
 

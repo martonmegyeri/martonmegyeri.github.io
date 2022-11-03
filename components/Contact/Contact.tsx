@@ -15,8 +15,8 @@ const Contact = () => (
       <SectionIndex>{3}</SectionIndex>
     </div>
     <p>
-      You can find me on <Link href={globalConfig.githubUrl}>github</Link> and{' '}
-      <Link href={globalConfig.linkedinUrl}>linkedin</Link>, or just send me an email at{' '}
+      You can find me on <Link href={globalConfig.githubUrl}>GitHub</Link> and{' '}
+      <Link href={globalConfig.linkedinUrl}>LinkedIn</Link>, or just send me an email at{' '}
       <Link href={`mailto:${globalConfig.email}`}>{globalConfig.email}</Link>
     </p>
   </Container>

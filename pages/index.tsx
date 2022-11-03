@@ -26,7 +26,7 @@ const Home: NextPage = () => (
 
     <NavigationSection id={navElements[0].id}>
       <Hero />
-      <Spacer size={10} />
+      <Spacer size={5} />
       <WhoAmI />
     </NavigationSection>
 
