@@ -14,6 +14,7 @@
     "@fontsource/raleway": "^4.5.11",
     "@react-three/drei": "^9.19.6",
     "@react-three/fiber": "^8.3.0",
+    "@react-three/postprocessing": "^2.7.0",
     "@react-three/rapier": "^0.7.6",
     "classnames": "^2.3.1",
     "eslint-config-prettier": "^8.5.0",
