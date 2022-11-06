@@ -21,7 +21,8 @@
   --color-red: indianred;
   --color-red-light: lightcoral;
   --color-orange: lightsalmon;
-  --color-green: seagreen;
+  --color-brown: #c38953;
+  --color-green: rgb(71, 141, 80);
   --color-blue-green: lightseagreen;
   --color-blue-light: lightskyblue;
   --color-blue: cornflowerblue;
@@ -29,7 +30,7 @@
 
   --color-background: var(--color-neutral-900);
   --color-text: var(--color-white);
-  --color-text-accent: var(--color-orange);
+  --color-text-accent: var(--color-brown);
 
   // fonts
   --font-family-primary: "RalewayVariable", arial, helvetica, sans-serif;

@@ -13,7 +13,7 @@ const Hero = () => (
 
     <Background />
 
-    <Container>
+    <Container className={styles.content}>
       <Heading rank={1}>
         <Reveal delay={0.4}>
           Hi

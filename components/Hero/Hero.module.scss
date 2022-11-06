@@ -1,8 +1,11 @@
 .hero {
-  position: relative;
-  pointer-events: none;
+  .content {
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
 
-  .scrollDownIndicator {
-    margin-top: 5vw;
+    .scrollDownIndicator {
+      margin-top: 5vw;
+    }
   }
 }
