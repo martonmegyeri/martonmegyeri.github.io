@@ -31,6 +31,7 @@ void main() {
   color = mix(color, uColor2, smoothstep(0.4, 0.8, strength));
   color = mix(color, uColor3, smoothstep(0.6, 1.0, strength));
   color = mix(color, uColor4, smoothstep(0.4, 1.0, noise(position * strength)));
+  color = mix(color, uColorBase, smoothstep(0.7, 1.0, 1.0 - vUv.y)); // creates the black fade-out effect at y axis
 
   gl_FragColor = vec4(color, 1.0);
 }

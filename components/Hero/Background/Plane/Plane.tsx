@@ -6,8 +6,8 @@ import * as THREE from 'three';
 import fragmentShader from './shaders/fragment.glsl';
 import vertexShader from './shaders/vertex.glsl';
 
-const FREQUENCY = 2;
-const STRENGTH = 2.5;
+const FREQUENCY = 0.75;
+const STRENGTH = 1.5;
 const SPEED = 0.02;
 const COLOR_BASE = '#4c4c4c';
 const COLOR_1 = '#be9e75';
@@ -15,7 +15,7 @@ const COLOR_2 = '#c4ba96';
 const COLOR_3 = '#578669';
 const COLOR_4 = '#2e3b29';
 
-const BackgroundSphereShaderMaterial = shaderMaterial(
+const PlaneShaderMaterial = shaderMaterial(
   {
     uFrequency: FREQUENCY,
     uStrength: STRENGTH,
@@ -31,9 +31,9 @@ const BackgroundSphereShaderMaterial = shaderMaterial(
   fragmentShader
 );
 
-extend({ BackgroundSphereShaderMaterial });
+extend({ PlaneShaderMaterial });
 
-export default function BackgroundSphere() {
+export default function Plane() {
   const ref = useRef<THREE.ShaderMaterial>(null);
   const viewport = useThree(state => state.viewport);
   const { frequency, strength, speed, colorBase, color1, color2, color3, color4 } = useControls('Background', {
@@ -55,12 +55,12 @@ export default function BackgroundSphere() {
 
   return (
     <mesh>
-      <sphereBufferGeometry args={[viewport.width, 32, 32]} />
+      <planeBufferGeometry args={[viewport.width, viewport.height]} />
       {/* @ts-ignore */}
-      <backgroundSphereShaderMaterial
-        side={THREE.BackSide}
+      <planeShaderMaterial
+        side={THREE.DoubleSide}
         ref={ref}
-        key={BackgroundSphereShaderMaterial.key}
+        key={PlaneShaderMaterial.key}
         uFrequency={frequency}
         uStrength={strength}
         uSpeed={speed}
