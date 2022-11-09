@@ -10,11 +10,11 @@ const FadeIn = ({ children }: Props) => (
     transition={{ duration: 3 }}
     initial={{
       opacity: 0,
-      WebkitMask: 'linear-gradient(90deg, #000 25%, rgba(0, 0, 0, 0)) 150% 0 / 400% no-repeat',
+      WebkitMask: 'linear-gradient(90deg, #000 25%, hsl(0 0% 0% / 0%)) 150% 0 / 400% no-repeat',
     }}
     animate={{
       opacity: 1,
-      WebkitMask: 'linear-gradient(90deg, #000 25%, rgba(0, 0, 0, 0)) 0% 0 / 400% no-repeat',
+      WebkitMask: 'linear-gradient(90deg, #000 25%, hsl(0 0% 0% / 0%)) 0% 0 / 400% no-repeat',
     }}
   >
     {children}

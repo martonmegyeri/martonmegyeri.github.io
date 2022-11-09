@@ -18,12 +18,12 @@ a {
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: hsl(0 0% 0% / 0%);
   -webkit-tap-highlight-color: transparent;
   scrollbar-width: thin; // FF
 
   &::selection {
-    background: rgba(255, 255, 255, 0.1);
+    background: hsl(0 0% 100% / 10%);
     color: var(--color-text);
   }
 
@@ -34,10 +34,10 @@ a {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.25);
+      background-color: hsl(0 0% 100% / 25%);
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.4);
+        background-color: hsl(0 0% 100% / 40%);
       }
     }
   }
