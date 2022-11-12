@@ -1,9 +1,9 @@
 import classNames from 'classnames';
 import { motion, useTransform } from 'framer-motion';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { HTMLAttributes } from 'react';
+import arrowDown from '~/assets/images/arrow-down.svg';
 import useScrollVelocityValue from '~/utils/use-scroll-velocity-value';
-import arrowDown from './arrow-down.svg';
 import styles from './ScrollDownIndicator.module.scss';
 
 type Props = HTMLAttributes<HTMLDivElement>;

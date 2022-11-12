@@ -27,10 +27,8 @@ function Link(
 
   if (href) {
     return (
-      <NextLink href={href}>
-        <a {...rest} ref={ref} className={className}>
-          <Children>{children}</Children>
-        </a>
+      <NextLink {...rest} ref={ref} href={href} className={className}>
+        <Children>{children}</Children>
       </NextLink>
     );
   }

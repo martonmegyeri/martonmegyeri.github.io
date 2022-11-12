@@ -1,7 +1,7 @@
 import classNames from 'classnames';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import shallow from 'zustand/shallow';
-import arrow from '~/assets/images/arrow-right.svg';
+import arrow from '~/assets/images/arrow-down.svg';
 import scrollToRef from '~/utils/scroll-to-ref';
 import styles from './Navigation.module.scss';
 import { NavigationId, useNavigationStore } from './store';
