@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { forwardRef } from 'react';
 import styles from './Heading.module.scss';
 
-export type HeadingRank = 1 | 2 | 3 | 4 | 5;
+export type HeadingRank = 1 | 2 | 3 | 4 | 5 | 6;
 export type HeadingAs = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
 
 export type HeadingProps = Omit<React.HTMLProps<HTMLElement>, 'ref'> & {

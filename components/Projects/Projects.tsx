@@ -18,6 +18,7 @@ export default function Projects() {
         similique facere officiis ipsa. Non sequi repellat quaerat quasi labore, similique perspiciatis ea qui impedit?
         Quisquam.
       </p>
+      <p className={styles.comingSoon}>More projects coming soon ...</p>
     </Container>
   );
 }

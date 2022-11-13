@@ -37,12 +37,15 @@ const Home: NextPage = () => (
     <Spacer size={3} />
 
     <HorizontalParallaxText clones={2} baseVelocity={5}>
-      <Heading rank={2} style={{ letterSpacing: '0.02em' }}>
+      <Heading rank={2} style={{ letterSpacing: '0.02em', fontWeight: 620 }}>
         When you know yourself, you are empowered.&nbsp;&nbsp;
       </Heading>
     </HorizontalParallaxText>
     <HorizontalParallaxText clones={2} baseVelocity={-5}>
-      <Heading rank={2} style={{ letterSpacing: '0.02em' }}>
+      <Heading
+        rank={2}
+        style={{ letterSpacing: '0.02em', WebkitTextStroke: '1px var(--color-text)', color: 'transparent' }}
+      >
         When you accept yourself, you are invincible.&nbsp;&nbsp;
       </Heading>
     </HorizontalParallaxText>

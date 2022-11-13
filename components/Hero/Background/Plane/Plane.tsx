@@ -8,7 +8,7 @@ import vertexShader from './shaders/vertex.glsl';
 
 const FREQUENCY = 0.75;
 const STRENGTH = 1.5;
-const SPEED = 0.02;
+const SPEED = 0.03;
 const COLOR_BASE = '#4c4c4c';
 const COLOR_1 = '#be9e75';
 const COLOR_2 = '#c4ba96';
