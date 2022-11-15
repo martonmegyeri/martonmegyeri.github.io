@@ -6,9 +6,10 @@ import * as THREE from 'three';
 import fragmentShader from './shaders/fragment.glsl';
 import vertexShader from './shaders/vertex.glsl';
 
-const FREQUENCY = 0.75;
-const STRENGTH = 1.5;
-const SPEED = 0.03;
+const FREQUENCY = 0.7;
+const NOISE_SCALE_X = 1;
+const NOISE_SCALE_Y = 1.5;
+const SPEED = 0.04;
 const COLOR_BASE = '#4c4c4c';
 const COLOR_1 = '#be9e75';
 const COLOR_2 = '#c4ba96';
@@ -18,7 +19,8 @@ const COLOR_4 = '#2e3b29';
 const PlaneShaderMaterial = shaderMaterial(
   {
     uFrequency: FREQUENCY,
-    uStrength: STRENGTH,
+    uNoiseScaleX: NOISE_SCALE_X,
+    uNoiseScaleY: NOISE_SCALE_Y,
     uSpeed: SPEED,
     uColorBase: new THREE.Color(COLOR_BASE),
     uColor1: new THREE.Color(COLOR_1),
@@ -36,16 +38,20 @@ extend({ PlaneShaderMaterial });
 export default function Plane() {
   const ref = useRef<THREE.ShaderMaterial>(null);
   const viewport = useThree(state => state.viewport);
-  const { frequency, strength, speed, colorBase, color1, color2, color3, color4 } = useControls('Background', {
-    frequency: { value: FREQUENCY, min: 0, max: 5 },
-    strength: { value: STRENGTH, min: 0, max: 10 },
-    speed: { value: SPEED, min: 0, max: 1 },
-    colorBase: COLOR_BASE,
-    color1: COLOR_1,
-    color2: COLOR_2,
-    color3: COLOR_3,
-    color4: COLOR_4,
-  });
+  const { frequency, noiseScaleX, noiseScaleY, speed, colorBase, color1, color2, color3, color4 } = useControls(
+    'Background',
+    {
+      frequency: { value: FREQUENCY, min: 0, max: 5 },
+      noiseScaleX: { value: NOISE_SCALE_X, min: 0, max: 10 },
+      noiseScaleY: { value: NOISE_SCALE_Y, min: 0, max: 10 },
+      speed: { value: SPEED, min: 0, max: 1 },
+      colorBase: COLOR_BASE,
+      color1: COLOR_1,
+      color2: COLOR_2,
+      color3: COLOR_3,
+      color4: COLOR_4,
+    }
+  );
 
   useFrame(({ clock }) => {
     if (!ref.current) return;
@@ -62,7 +68,8 @@ export default function Plane() {
         ref={ref}
         key={PlaneShaderMaterial.key}
         uFrequency={frequency}
-        uStrength={strength}
+        uNoiseScaleX={noiseScaleX}
+        uNoiseScaleY={noiseScaleY}
         uSpeed={speed}
         uColorBase={colorBase}
         uColor1={new THREE.Color(color1)}

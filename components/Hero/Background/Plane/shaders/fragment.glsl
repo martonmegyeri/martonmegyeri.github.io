@@ -1,7 +1,8 @@
-#pragma glslify: noise = require(glsl-noise/simplex/2d)
+#pragma glslify: snoise2 = require(glsl-noise/simplex/2d)
 
 uniform float uFrequency;
-uniform float uStrength;
+uniform float uNoiseScaleX;
+uniform float uNoiseScaleY;
 uniform float uSpeed;
 uniform vec3 uColorBase;
 uniform vec3 uColor1;
@@ -22,15 +23,17 @@ vec2 rotateUv(vec2 uv, float rotation) {
 
 void main() {
   // Roate the UV coordinates of the sphere with the nosie factor
-  float noiseFactor = noise(vUv + uTime * uSpeed) * uStrength;
+  float x = vUv.x * uNoiseScaleX;
+  float y = vUv.y * uNoiseScaleY;
+  float noiseFactor = snoise2(vec2(x, y) + uTime * uSpeed);
   vec2 position = rotateUv(vUv, noiseFactor);
 
   // Create gradient
-  float strength = noise(position * uFrequency);
+  float strength = snoise2(position * uFrequency);
   vec3 color = mix(uColorBase, uColor1, smoothstep(0.0, 0.8, strength));
   color = mix(color, uColor2, smoothstep(0.4, 0.8, strength));
   color = mix(color, uColor3, smoothstep(0.6, 1.0, strength));
-  color = mix(color, uColor4, smoothstep(0.4, 1.0, noise(position * strength)));
+  color = mix(color, uColor4, smoothstep(0.4, 1.0, snoise2(position * strength)));
   color = mix(color, uColorBase, smoothstep(0.7, 1.0, 1.0 - vUv.y)); // creates the black fade-out effect at y axis
 
   gl_FragColor = vec4(color, 1.0);
