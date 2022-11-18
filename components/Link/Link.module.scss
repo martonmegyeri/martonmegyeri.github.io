@@ -1,8 +1,5 @@
 @use "../../styles/mixins";
 
-$transition-timing: cubic-bezier(0.23, 0, 0.1, 1);
-$transition-duration: 600ms;
-
 .link {
   position: relative;
   display: inline-flex;
@@ -11,7 +8,7 @@ $transition-duration: 600ms;
   font-weight: 600;
 
   &:hover .children {
-    .text {
+    .actual {
       transform: translate3d(0, -100%, 0);
     }
 
@@ -25,10 +22,10 @@ $transition-duration: 600ms;
     display: flex;
     overflow: hidden;
 
-    .text {
+    .actual {
       position: relative;
       z-index: 1;
-      transition: transform $transition-duration $transition-timing;
+      transition: transform var(--transition-primary);
     }
 
     .visual {
@@ -38,7 +35,7 @@ $transition-duration: 600ms;
       width: 100%;
       height: 100%;
       transform: translate3d(0, 100%, 0);
-      transition: transform $transition-duration $transition-timing;
+      transition: transform var(--transition-primary);
     }
   }
 

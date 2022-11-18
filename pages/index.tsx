@@ -1,5 +1,7 @@
 import type { NextPage } from 'next';
+import Button from '~/components/Button';
 import Contact from '~/components/Contact';
+import Container from '~/components/Container';
 import Heading from '~/components/Heading';
 import Hero from '~/components/Hero';
 import HorizontalParallaxText from '~/components/HorizontalParallaxText';
@@ -65,6 +67,14 @@ const Home: NextPage = () => (
     <NavigationSection id={navElements[2].id}>
       <Contact />
     </NavigationSection>
+
+    <Spacer size={10} />
+
+    <Container style={{ display: 'flex', justifyContent: 'end' }}>
+      <Button arrowType="top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        Back to&nbsp;top
+      </Button>
+    </Container>
 
     <Spacer size={5} />
   </>

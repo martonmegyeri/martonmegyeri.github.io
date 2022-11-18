@@ -14,6 +14,10 @@ export default function Background() {
         {/* <Sphere position={[5, 3.5, 0]} /> */}
         <Plane />
         <OrbitControls enabled={cameraControlsEnabled} />
+        {/* <EffectComposer multisampling={4}>
+          <Noise blendFunction={BlendFunction.SOFT_LIGHT} opacity={1} premultiply />
+          <Vignette eskil={false} offset={0.1} darkness={0.6} />
+        </EffectComposer> */}
       </Canvas>
       <Leva collapsed hidden={false} />
     </div>

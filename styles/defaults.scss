@@ -3,13 +3,20 @@
 html {
   font-size: max(16px, 2vw); // controls the sizing of the whole typography system
   line-height: 1.5;
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: var(--color-background);
-    font-family: var(--font-family-primary);
-    color: var(--color-text);
-    overflow-x: hidden;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-family-primary);
+  color: var(--color-text);
+  overflow-x: hidden;
 }
 
 a {
@@ -17,15 +24,9 @@ a {
   text-decoration: none;
 }
 
+// Scrollbar
 * {
-  -webkit-tap-highlight-color: hsl(0 0% 0% / 0%);
-  -webkit-tap-highlight-color: transparent;
   scrollbar-width: thin; // FF
-
-  &::selection {
-    background: hsl(0 0% 100% / 10%);
-    color: var(--color-text);
-  }
 
   @include mixins.non-touch-device {
     &::-webkit-scrollbar {
@@ -41,4 +42,16 @@ a {
       }
     }
   }
+}
+
+// Tap highlight color
+* {
+  -webkit-tap-highlight-color: hsl(0 0% 0% / 0%);
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Selection
+*::selection {
+  background: hsl(0 0% 100% / 10%);
+  color: var(--color-text);
 }

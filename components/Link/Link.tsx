@@ -43,7 +43,7 @@ const Children = ({ children }: Pick<Props, 'children'>) => {
   return (
     <>
       <span className={styles.children}>
-        <span className={styles.text}>{children}</span>
+        <span className={styles.actual}>{children}</span>
         <span className={styles.visual} aria-hidden="true">
           {children}
         </span>
