@@ -7,14 +7,13 @@ type ParallaxOptions = {
 
 export default function useParallax(ref: RefObject<HTMLElement>, { offset = 100 }: ParallaxOptions = {}) {
   const prefersReducedMotion = useReducedMotion();
-  const [elementTop, setElementTop] = useState(0);
+  const [elementAbsY, setElementAbsY] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
   const { scrollY } = useScroll();
-
-  const initial = elementTop - clientHeight;
-  const final = elementTop + offset;
-  const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
-  const y = useSpring(yRange, { stiffness: 500, damping: 50 });
+  const start = elementAbsY - clientHeight; // start animating the element when it's scrolled into view
+  const end = elementAbsY + offset; // end animation when it's scrolled the offset specified
+  const yRange = useTransform(scrollY, [start, end], [offset, -offset]);
+  const ySpring = useSpring(yRange, { stiffness: 500, damping: 50 });
 
   useEffect(() => {
     if (prefersReducedMotion) return;
@@ -23,7 +22,7 @@ export default function useParallax(ref: RefObject<HTMLElement>, { offset = 100 
       if (!ref.current) return;
 
       const rect = ref.current.getBoundingClientRect();
-      setElementTop(rect.top + window.scrollY || window.pageYOffset);
+      setElementAbsY(rect.top + window.scrollY);
       setClientHeight(window.innerHeight);
     };
 
@@ -32,5 +31,5 @@ export default function useParallax(ref: RefObject<HTMLElement>, { offset = 100 
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  return { y };
+  return { y: ySpring };
 }

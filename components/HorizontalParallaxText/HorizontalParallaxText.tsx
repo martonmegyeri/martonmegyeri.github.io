@@ -1,4 +1,4 @@
-import { motion, useTransform } from 'framer-motion';
+import { motion, useSpring, useTransform } from 'framer-motion';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import Container from '~/components/Container';
 import useScrollVelocityValue from '~/utils/use-scroll-velocity-value';
@@ -15,7 +15,8 @@ export default function HorizontalParallaxText({ children, clones = 5, baseVeloc
   const scrollerRef = useRef<HTMLDivElement>(null);
   const childRef = useRef<HTMLDivElement>(null);
   const xMotionValue = useScrollVelocityValue({ baseVelocity: baseVelocity });
-  const x = useTransform(xMotionValue, x => `${wrap(0, childWidthPercent || 0, x)}%`);
+  const xSpring = useSpring(xMotionValue, { stiffness: 300, damping: 50 });
+  const x = useTransform(xSpring, x => `${wrap(0, childWidthPercent || 0, x)}%`);
 
   useEffect(() => {
     if (!scrollerRef.current || !childRef.current) return;

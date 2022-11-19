@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { motion, useTransform } from 'framer-motion';
+import { motion, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { HTMLAttributes } from 'react';
 import arrowDown from '~/assets/images/arrow-down.svg';
@@ -9,8 +9,9 @@ import styles from './ScrollDownIndicator.module.scss';
 type Props = HTMLAttributes<HTMLDivElement>;
 
 export default function ScrollDownIndicator(props: Props) {
-  const rotateZ = useScrollVelocityValue({ baseVelocity: 30 });
-  const rotateZValue = useTransform(rotateZ, x => `${x}deg`);
+  const rotateZ = useScrollVelocityValue({ baseVelocity: 50 });
+  const rotateZSpring = useSpring(rotateZ, { stiffness: 300, damping: 50 });
+  const rotateZValue = useTransform(rotateZSpring, x => `${x}deg`);
 
   return (
     <div {...props} className={classNames(styles.scrollDownIndicator, props.className)}>

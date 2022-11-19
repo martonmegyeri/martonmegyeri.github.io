@@ -72,11 +72,11 @@ const Home: NextPage = () => (
 
     <Container style={{ display: 'flex', justifyContent: 'end' }}>
       <Button arrowType="top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        Back to&nbsp;top
+        Back to top
       </Button>
     </Container>
 
-    <Spacer size={5} />
+    <Spacer size={2} />
   </>
 );
 
