@@ -1,6 +1,5 @@
 import { useReducedMotion, useSpring } from 'framer-motion';
 import { RefObject, useEffect, useState } from 'react';
-import distance from './distance';
 
 type MagnetOptions = {
   strength?: number;
@@ -40,10 +39,18 @@ export default function useMagnet(
         y: position.y - mousePosition.y,
       };
 
-      const distanceToTrigger = rect.width * (0.5 + triggerDistanceFactor);
-      const distanceFromElementCenter = distance(position, mousePosition);
+      const distanceToTrigger = {
+        x: rect.width * (0.5 + triggerDistanceFactor),
+        y: rect.height * (0.5 + triggerDistanceFactor),
+      };
+      const distanceFromElementCenter = {
+        x: Math.abs(position.x - mousePosition.x),
+        y: Math.abs(position.y - mousePosition.y),
+      };
 
-      if (distanceFromElementCenter > distanceToTrigger) {
+      const shouldTrigger =
+        distanceFromElementCenter.x > distanceToTrigger.x || distanceFromElementCenter.y > distanceToTrigger.y;
+      if (shouldTrigger) {
         setIsHovering(false);
         x.set(0);
         y.set(0);

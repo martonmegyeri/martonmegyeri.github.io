@@ -1,7 +1,7 @@
 @use "../../styles/mixins.scss";
 
 .button {
-  --padding-x: max(10px, 1.5vw);
+  --padding-x: max(16px, 1.5vw);
   --padding-y: calc(var(--padding-x) * 2);
   --border-width: max(1px, 1vw);
 
@@ -54,7 +54,7 @@
       display: flex;
       overflow: hidden;
       font-weight: 500;
-      font-size: 0.65rem;
+      font-size: max(14px, 0.65rem);
       line-height: 1.1;
 
       .actual {
