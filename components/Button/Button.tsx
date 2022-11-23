@@ -15,12 +15,12 @@ type Props = {
 export default function Button({ onClick, arrowType = 'link', children }: Props) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const childrenRef = useRef<HTMLDivElement>(null);
-  const buttonTransformation = useMagnet(buttonRef, { strength: 0.6 });
-  const childrenTransformation = useMagnet(childrenRef, { strength: 0.2 });
+  const buttonMagnetStyles = useMagnet(buttonRef, { strength: 0.6 });
+  const childrenMagnetStyles = useMagnet(childrenRef, { strength: 0.2 });
 
   return (
-    <motion.button ref={buttonRef} style={buttonTransformation} className={styles.button} onClick={onClick}>
-      <motion.div ref={childrenRef} style={childrenTransformation} className={styles.content}>
+    <motion.button ref={buttonRef} style={buttonMagnetStyles} className={styles.button} onClick={onClick}>
+      <motion.div ref={childrenRef} style={childrenMagnetStyles} className={styles.content}>
         <span className={styles.children}>
           <Image src={arrow} unoptimized alt="" className={classNames(styles.arrow, styles[arrowType])} />
           <div className={styles.text}>

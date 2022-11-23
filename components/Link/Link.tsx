@@ -1,7 +1,9 @@
 import classnames from 'classnames';
+import { motion } from 'framer-motion';
 import NextLink from 'next/link';
-import React, { ForwardedRef, forwardRef, HTMLProps, ReactNode } from 'react';
+import React, { ForwardedRef, forwardRef, HTMLProps, ReactNode, useMemo, useRef } from 'react';
 import useIsClient from '~/utils/use-is-client';
+import useMagnet from '~/utils/use-magnet';
 import styles from './Link.module.scss';
 
 type Props = HTMLProps<HTMLAnchorElement> & {
@@ -37,17 +39,19 @@ function Link(
 }
 
 const Children = ({ children }: Pick<Props, 'children'>) => {
-  const positionX = getRandomPositionXValue();
+  const ref = useRef<HTMLSpanElement>(null);
+  const magnetStyles = useMagnet(ref, { strength: 0.2 });
+  const positionX = useMemo(getRandomPositionXValue, []);
   const isClient = useIsClient();
 
   return (
     <>
-      <span className={styles.children}>
+      <motion.span ref={ref} style={magnetStyles} className={styles.children}>
         <span className={styles.actual}>{children}</span>
         <span className={styles.visual} aria-hidden="true">
           {children}
         </span>
-      </span>
+      </motion.span>
       {isClient && (
         <span
           className={styles.underline}

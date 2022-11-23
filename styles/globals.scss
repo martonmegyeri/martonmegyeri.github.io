@@ -50,4 +50,8 @@
   --transition-primary: 0.55s var(--transition-timing);
   --transition-smooth: 0.7s var(--transition-timing);
   --transition-slow: 0.9s var(--transition-timing);
+
+  // Ratio numbers
+  --golden-ratio-longer: 61.8%;
+  --golden-ratio-shorter: 38.2%;
 }

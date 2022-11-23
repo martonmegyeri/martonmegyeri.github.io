@@ -23,14 +23,11 @@
     overflow: hidden;
 
     .actual {
-      position: relative;
-      z-index: 1;
       transition: transform var(--transition-primary);
     }
 
     .visual {
       position: absolute;
-      z-index: 1;
       inset: 0;
       width: 100%;
       height: 100%;
@@ -42,7 +39,7 @@
   .underline {
     content: "";
     position: absolute;
-    bottom: -25%;
+    bottom: -30%;
     left: 0;
     width: 100%;
     height: 100%;

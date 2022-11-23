@@ -32,7 +32,7 @@ const Home: NextPage = () => (
       <WhoAmI />
     </NavigationSection>
 
-    <Spacer size={10} />
+    <Spacer size={15} />
 
     <Hr />
 
@@ -56,21 +56,21 @@ const Home: NextPage = () => (
 
     <Hr />
 
-    <Spacer size={10} />
+    <Spacer size={15} />
 
     <NavigationSection id={navElements[1].id}>
       <Projects />
     </NavigationSection>
 
-    <Spacer size={10} />
+    <Spacer size={15} />
 
     <NavigationSection id={navElements[2].id}>
       <Contact />
     </NavigationSection>
 
-    <Spacer size={10} />
+    <Spacer size={15} />
 
-    <Container style={{ display: 'flex', justifyContent: 'end' }}>
+    <Container style={{ display: 'flex', justifyContent: 'center' }}>
       <Button arrowType="top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         Back to top
       </Button>

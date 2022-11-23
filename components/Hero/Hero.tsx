@@ -14,16 +14,16 @@ const Hero = () => (
 
     <Container className={styles.content}>
       <Heading rank={1}>
-        <Reveal delay={0.4}>
+        <Reveal delay={1}>
           Hi
           <Coma /> I<QuotationMark />m Marton
           <Coma />
         </Reveal>
-        <Reveal delay={0.6}>
+        <Reveal delay={1.2}>
           Frontend Developer
           <Coma />
         </Reveal>
-        <Reveal delay={0.8}>
+        <Reveal delay={1.4}>
           Design Addict
           <Dot />
         </Reveal>
