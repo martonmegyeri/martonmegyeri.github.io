@@ -24,6 +24,7 @@
   --color-brown: hsl(29 48% 55%);
   --color-brown-dark: hsl(22, 32%, 40%);
   --color-green: hsl(128 33% 42%);
+  --color-green-dark: hsl(128 20% 30%);
   --color-blue-green: lightseagreen;
   --color-blue-light: lightskyblue;
   --color-blue: cornflowerblue;
@@ -31,7 +32,7 @@
 
   --color-background: var(--color-neutral-900);
   --color-text: var(--color-white);
-  --color-text-accent: var(--color-brown);
+  --color-text-accent: var(--color-brown-dark);
 
   // Fonts
   --font-family-primary: "RalewayVariable", arial, helvetica, sans-serif;

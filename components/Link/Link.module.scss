@@ -21,6 +21,7 @@
     position: relative;
     display: flex;
     overflow: hidden;
+    mix-blend-mode: difference;
 
     .actual {
       transition: transform var(--transition-primary);
