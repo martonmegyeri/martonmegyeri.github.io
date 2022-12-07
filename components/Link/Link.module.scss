@@ -19,9 +19,9 @@
 
   .children {
     position: relative;
+    z-index: 1;
     display: flex;
     overflow: hidden;
-    mix-blend-mode: difference;
 
     .actual {
       transition: transform var(--transition-primary);

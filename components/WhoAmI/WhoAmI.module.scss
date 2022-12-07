@@ -31,8 +31,12 @@
 
     .photoWrapper {
       position: relative;
-      margin-top: 10vw;
+      display: flex;
+      align-items: center;
       max-width: 100%;
+      height: 700px;
+      margin-top: 10vw;
+      overflow: hidden;
 
       .photo {
         max-width: 100%;

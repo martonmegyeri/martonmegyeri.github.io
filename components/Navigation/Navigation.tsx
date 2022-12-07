@@ -34,7 +34,7 @@ type NavigationItemProps = Element;
 
 function NavigationItem({ id, label }: NavigationItemProps) {
   const ref = useRef<HTMLLIElement>(null);
-  const magnetStyles = useMagnet(ref);
+  const magnetStyles = useMagnet(ref, { strength: 0.4 });
   const [visibleSection, sectionRefs] = useNavigationStore(state => [state.visibleSection, state.sectionRefs], shallow);
 
   const handleClick = (id: NavigationId) => {

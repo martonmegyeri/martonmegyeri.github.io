@@ -11,9 +11,9 @@ const NOISE_SCALE_X = 1;
 const NOISE_SCALE_Y = 1.5;
 const SPEED = 0.04;
 const COLOR_BASE = '#4c4c4c';
-const COLOR_1 = '#be9e75';
-const COLOR_2 = '#c4ba96';
-const COLOR_3 = '#578669';
+const COLOR_1 = '#c19c6e';
+const COLOR_2 = '#c6b98f';
+const COLOR_3 = '#4f8e67';
 const COLOR_4 = '#2e3b29';
 
 const PlaneShaderMaterial = shaderMaterial(

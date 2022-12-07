@@ -50,9 +50,11 @@ function Photo() {
   const parallaxStyles = useCenteredParallax(ref, { offset: 100 });
 
   return (
-    <motion.div ref={ref} style={parallaxStyles} className={styles.photoWrapper}>
-      <span className={styles.label}>Me in New York</span>
-      <Image src={me} alt="Photo of me" width={500} height={700} className={styles.photo} />
-    </motion.div>
+    <div className={styles.photoWrapper}>
+      <motion.div ref={ref} style={parallaxStyles}>
+        <span className={styles.label}>Me in New York</span>
+        <Image src={me} alt="Photo of me" width={500} height={900} className={styles.photo} />
+      </motion.div>
+    </div>
   );
 }
