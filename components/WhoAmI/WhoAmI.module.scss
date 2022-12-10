@@ -2,9 +2,6 @@
 
 .whoAmI {
   .title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 4vw;
   }
 
@@ -15,7 +12,7 @@
 
   .firstPart {
     @include breakpoints.media-min(md) {
-      max-width: 75%;
+      width: 75%;
     }
 
     p {
@@ -25,15 +22,14 @@
   }
 
   .secondPart {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15vw;
+    display: flex;
+    justify-content: space-between;
 
     .photoWrapper {
       position: relative;
       display: flex;
       align-items: center;
-      max-width: 100%;
+      width: var(--golden-ratio-shorter);
       height: 700px;
       margin-top: 10vw;
       overflow: hidden;
@@ -53,9 +49,13 @@
       }
     }
 
-    p {
-      margin-top: 0;
-      font-size: 1.2rem;
+    .text {
+      width: var(--golden-ratio-shorter);
+
+      p {
+        margin-top: 0;
+        font-size: 1.2rem;
+      }
     }
   }
 }

@@ -1,24 +1,41 @@
+import { globalConfig } from '~/config/global';
+import Button from '../Button';
 import Container from '../Container';
 import Heading from '../Heading';
 import Reveal from '../Reveal';
-import SectionIndex from '../SectionIndex';
 import styles from './Projects.module.scss';
 
 export default function Projects() {
   return (
     <Container className={styles.projects}>
-      <div className={styles.title}>
-        <SectionIndex>{2}</SectionIndex>
-        <Heading rank={2}>
-          <Reveal delay={0.2}>Projects</Reveal>
-        </Heading>
-      </div>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum repellat qui architecto, laboriosam explicabo
-        similique facere officiis ipsa. Non sequi repellat quaerat quasi labore, similique perspiciatis ea qui impedit?
-        Quisquam.
-      </p>
-      <p className={styles.comingSoon}>More projects coming soon ...</p>
+      <Heading rank={2} className={styles.title}>
+        <Reveal delay={0.2}>Recent</Reveal>
+        <Reveal delay={0.4}>Work</Reveal>
+      </Heading>
+
+      <ul className={styles.list}>
+        <li>
+          <Heading rank={4} as="h3" className={styles.itemTitle}>
+            Spiritful
+          </Heading>
+          <span className={styles.type}>Design & Development</span>
+        </li>
+        <li>
+          <Heading rank={4} as="h3" className={styles.itemTitle}>
+            Spiritful
+          </Heading>
+          <span className={styles.type}>Design & Development</span>
+        </li>
+        <li>
+          <Heading rank={4} as="h3" className={styles.itemTitle}>
+            Spiritful
+          </Heading>
+          <span className={styles.type}>Design & Development</span>
+        </li>
+      </ul>
+      <Button onClick={() => window.open(globalConfig.githubUrl)} className={styles.button}>
+        More work
+      </Button>
     </Container>
   );
 }

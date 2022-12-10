@@ -10,16 +10,22 @@ type Props = {
   onClick: () => void;
   arrowType?: 'link' | 'top';
   children: ReactNode;
+  className?: string;
 };
 
-export default function Button({ onClick, arrowType = 'link', children }: Props) {
+export default function Button({ onClick, arrowType = 'link', children, className }: Props) {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const childrenRef = useRef<HTMLDivElement>(null);
   const buttonMagnetStyles = useMagnet(buttonRef, { strength: 0.6 });
   const childrenMagnetStyles = useMagnet(childrenRef, { strength: 0.2 });
 
   return (
-    <motion.button ref={buttonRef} style={buttonMagnetStyles} className={styles.button} onClick={onClick}>
+    <motion.button
+      ref={buttonRef}
+      style={buttonMagnetStyles}
+      className={classNames(styles.button, className)}
+      onClick={onClick}
+    >
       <motion.div ref={childrenRef} style={childrenMagnetStyles} className={styles.content}>
         <span className={styles.children}>
           <Image src={arrow} unoptimized alt="" className={classNames(styles.arrow, styles[arrowType])} />

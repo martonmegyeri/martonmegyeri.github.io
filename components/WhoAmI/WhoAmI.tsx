@@ -5,7 +5,6 @@ import useCenteredParallax from '~/utils/use-centered-parallax';
 import Container from '../Container';
 import Heading from '../Heading';
 import Reveal from '../Reveal';
-import SectionIndex from '../SectionIndex';
 import Spacer from '../Spacer';
 import StrikethroughText from '../StrikethroughText';
 import me from './me.jpg';
@@ -14,12 +13,9 @@ import styles from './WhoAmI.module.scss';
 export default function WhoAmI() {
   return (
     <Container className={styles.whoAmI}>
-      <div className={styles.title}>
-        <Heading rank={2}>
-          <Reveal delay={0.2}>Who am I?</Reveal>
-        </Heading>
-        <SectionIndex>{1}</SectionIndex>
-      </div>
+      <Heading rank={2} className={styles.title}>
+        <Reveal delay={0.2}>Who am I?</Reveal>
+      </Heading>
       <div className={styles.firstPart}>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum repellat qui architecto, laboriosam explicabo
@@ -30,7 +26,7 @@ export default function WhoAmI() {
       <Spacer size={15} />
       <div className={styles.secondPart}>
         <Photo />
-        <div>
+        <div className={styles.text}>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum repellat qui architecto, laboriosam
             explicabo similique facere officiis ipsa.

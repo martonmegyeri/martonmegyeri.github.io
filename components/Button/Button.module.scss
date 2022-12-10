@@ -58,7 +58,7 @@
       line-height: 1.1;
 
       .actual {
-        transition: transform var(--transition-primary);
+        transition: transform var(--transition-smooth);
       }
 
       .visual {
@@ -67,7 +67,7 @@
         width: 100%;
         height: 100%;
         transform: translate3d(0, 100%, 0);
-        transition: transform var(--transition-primary);
+        transition: transform var(--transition-smooth);
       }
     }
 
@@ -78,7 +78,7 @@
       margin-inline: min(-10px, -0.5vw) min(5px, 0.25vw);
       width: var(--arrow-size);
       height: var(--arrow-size);
-      transition: var(--transition-primary);
+      transition: var(--transition-smooth);
 
       &.link {
         transform: rotate(-45deg);
