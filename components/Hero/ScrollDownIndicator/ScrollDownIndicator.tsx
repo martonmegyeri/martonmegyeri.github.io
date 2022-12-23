@@ -9,7 +9,7 @@ import styles from './ScrollDownIndicator.module.scss';
 type Props = HTMLAttributes<HTMLDivElement>;
 
 export default function ScrollDownIndicator(props: Props) {
-  const rotateZ = useScrollVelocityValue({ baseVelocity: 30 });
+  const rotateZ = useScrollVelocityValue({ baseVelocity: 40 });
   const rotateZSpring = useSpring(rotateZ, { stiffness: 300, damping: 50 });
   const rotateZValue = useTransform(rotateZSpring, x => `${x}deg`);
 
