@@ -97,10 +97,6 @@ function useRelativeSpringMousePosition(ref: RefObject<HTMLElement>, springOptio
       if (!ref.current) return;
 
       const rect = ref.current.getBoundingClientRect();
-
-      const isInViewport = rect.top < window.innerHeight && rect.top + rect.height > 0;
-      if (!isInViewport) return;
-
       x.set(mousePosition.x - rect.x);
       y.set(mousePosition.y - rect.y);
     };
@@ -109,8 +105,8 @@ function useRelativeSpringMousePosition(ref: RefObject<HTMLElement>, springOptio
       requestAnimationFrame(() => animate({ x: event.clientX, y: event.clientY }));
     };
 
-    document.body.addEventListener('mousemove', handleMouseMove);
-    return () => document.body.removeEventListener('mousemove', handleMouseMove);
+    ref.current?.addEventListener('mousemove', handleMouseMove);
+    return () => ref.current?.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return { x, y };
