@@ -10,6 +10,7 @@ type MagnetOptions = {
 };
 
 /**
+ * Makes an element to follow the cursor for a given distance.
  * @param options.triggerDistanceFactor `0.0` - only activated within the box of the element, `1.0` - activated within the range of the element * 2
  */
 export default function useMagnet(
@@ -18,9 +19,9 @@ export default function useMagnet(
 ) {
   const prefersReducedMotion = useReducedMotion();
   const [isHovering, setIsHovering] = useState(false);
-  const springConfig = { stiffness: 300, damping: isHovering ? 50 : 15 };
-  const x = useSpring(0, springConfig);
-  const y = useSpring(0, springConfig);
+  const springOptions = { stiffness: 300, damping: isHovering ? 50 : 15 };
+  const x = useSpring(0, springOptions);
+  const y = useSpring(0, springOptions);
 
   useEffect(() => {
     if (prefersReducedMotion) return;
