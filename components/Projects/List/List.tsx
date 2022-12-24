@@ -78,8 +78,6 @@ export default function List({ items }: Props) {
   );
 }
 
-type Position2D = { x: number; y: number };
-
 type SpringOptions = {
   stiffness: number;
   damping: number;
@@ -93,17 +91,25 @@ function useRelativeSpringMousePosition(ref: RefObject<HTMLElement>, springOptio
   useEffect(() => {
     if (prefersReducedMotion) return;
 
-    const animate = (mousePosition: Position2D) => {
+    const setInitialXPositionToVerticalCenter = () => {
       if (!ref.current) return;
 
       const rect = ref.current.getBoundingClientRect();
-      x.set(mousePosition.x - rect.x);
-      y.set(mousePosition.y - rect.y);
+      x.set(rect.width / 2);
     };
 
     const handleMouseMove = (event: MouseEvent) => {
-      requestAnimationFrame(() => animate({ x: event.clientX, y: event.clientY }));
+      requestAnimationFrame(() => {
+        if (!ref.current) return;
+
+        const rect = ref.current.getBoundingClientRect();
+
+        x.set(event.clientX - rect.x);
+        y.set(event.clientY - rect.y);
+      });
     };
+
+    setInitialXPositionToVerticalCenter();
 
     ref.current?.addEventListener('mousemove', handleMouseMove);
     return () => ref.current?.removeEventListener('mousemove', handleMouseMove);
