@@ -16,7 +16,7 @@ export default function Reveal({ children, delay = 0, as = 'div', className, ...
       ref={ref}
       {...(rest as any)}
       style={{ display: 'inline-block' }}
-      transition={{ delay, type: 'spring', damping: 10, mass: 0.75, stiffness: 100 }}
+      transition={{ delay, type: 'spring', stiffness: 200, damping: 40 }}
       initial={{ opacity: 0, y: '80%', skewY: '3deg' }}
       whileInView={{ opacity: 1, y: '0%', skewY: '0deg' }}
     >

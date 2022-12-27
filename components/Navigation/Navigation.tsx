@@ -6,6 +6,7 @@ import shallow from 'zustand/shallow';
 import arrow from '~/assets/images/arrow-down.svg';
 import scrollToRef from '~/utils/scroll-to-ref';
 import useMagnet from '~/utils/use-magnet';
+import Portal from '../Portal';
 import styles from './Navigation.module.scss';
 import { NavigationId, useNavigationStore } from './store';
 
@@ -20,13 +21,15 @@ type NavigationProps = {
 
 export default function Navigation({ elements }: NavigationProps) {
   return (
-    <nav className={styles.navigation}>
-      <ul>
-        {elements.map((element, i) => (
-          <NavigationItem key={i} {...element} />
-        ))}
-      </ul>
-    </nav>
+    <Portal id="root-portal">
+      <nav className={styles.navigation}>
+        <ul>
+          {elements.map((element, i) => (
+            <NavigationItem key={i} {...element} />
+          ))}
+        </ul>
+      </nav>
+    </Portal>
   );
 }
 

@@ -19,7 +19,7 @@ export default function useMagnet(
 ) {
   const prefersReducedMotion = useReducedMotion();
   const [isHovering, setIsHovering] = useState(false);
-  const springOptions = { stiffness: 300, damping: isHovering ? 50 : 15 };
+  const springOptions = { stiffness: 275, damping: isHovering ? 50 : 15 };
   const x = useSpring(0, springOptions);
   const y = useSpring(0, springOptions);
 

@@ -9,25 +9,30 @@
   border: calc(var(--border-width) / 100) solid hsl(0, 0%, 100%, 40%);
   border-radius: 10vw;
   cursor: pointer;
+  transition: border-color var(--transition-primary);
 
-  &:hover .children {
-    .text {
-      .actual {
-        transform: translate3d(0, -100%, 0);
+  &:hover {
+    border-color: var(--color-white);
+
+    .children {
+      .text {
+        .actual {
+          transform: translate3d(0, -100%, 0);
+        }
+
+        .visual {
+          transform: translate3d(0, 0, 0);
+        }
       }
 
-      .visual {
-        transform: translate3d(0, 0, 0);
-      }
-    }
+      .arrow {
+        &.link {
+          transform: rotate(225deg);
+        }
 
-    .arrow {
-      &.link {
-        transform: rotate(225deg);
-      }
-
-      &.top {
-        transform: rotate(180deg);
+        &.top {
+          transform: rotate(180deg);
+        }
       }
     }
   }

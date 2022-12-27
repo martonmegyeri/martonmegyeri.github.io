@@ -12,32 +12,32 @@ import styles from './WhoAmI.module.scss';
 
 export default function WhoAmI() {
   return (
-    <Container className={styles.whoAmI}>
-      <Heading rank={2} className={styles.title}>
-        <Reveal delay={0.2}>Who am I?</Reveal>
-      </Heading>
-      <div className={styles.firstPart}>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum repellat qui architecto, laboriosam explicabo
-          similique facere officiis ipsa. Non sequi repellat quaerat quasi labore, similique perspiciatis ea qui
-          impedit? Quisquam.
-        </p>
-      </div>
-      <Spacer size={15} />
-      <div className={styles.secondPart}>
-        <Photo />
-        <div className={styles.text}>
+    <div className={styles.whoAmI}>
+      <Container>
+        <Heading rank={2} className={styles.title}>
+          <Reveal delay={0.2}>Who am I?</Reveal>
+        </Heading>
+        <div className={styles.firstPart}>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum repellat qui architecto, laboriosam
-            explicabo similique facere officiis ipsa.
+            explicabo similique facere officiis ipsa. Non sequi repellat quaerat quasi labore, similique perspiciatis ea
+            qui impedit? Quisquam.
+          </p>
+        </div>
+        <Spacer size={10} />
+        <div className={styles.secondPart}>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum repellat qui architecto, laboriosam
+            explicabo.
           </p>
           <p>
             Non sequi repellat quaerat <StrikethroughText>quasi labore</StrikethroughText>, similique perspiciatis ea
             qui impedit? Quisquam.
           </p>
         </div>
-      </div>
-    </Container>
+      </Container>
+      <Photo />
+    </div>
   );
 }
 
@@ -46,10 +46,9 @@ function Photo() {
   const parallaxStyles = useCenteredParallax(ref, { offset: 100 });
 
   return (
-    <div className={styles.photoWrapper}>
-      <motion.div ref={ref} style={parallaxStyles}>
-        <span className={styles.label}>Me in New York</span>
-        <Image src={me} alt="Photo of me" width={500} height={900} className={styles.photo} />
+    <div className={styles.photo}>
+      <motion.div ref={ref} style={parallaxStyles} className={styles.parallaxWrapper}>
+        <Image src={me} alt="Photo of me" fill />
       </motion.div>
     </div>
   );

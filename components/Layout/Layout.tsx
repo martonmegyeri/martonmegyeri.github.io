@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import FadeIn from '../FadeIn';
+import SmoothScroll from '../SmoothScroll';
 import styles from './Layout.module.scss';
 
 type Props = {
@@ -8,9 +9,11 @@ type Props = {
 
 const Layout = ({ children }: Props) => (
   <FadeIn>
-    <div className={styles.layout}>
-      <main>{children}</main>
-    </div>
+    <SmoothScroll>
+      <div className={styles.layout}>
+        <main>{children}</main>
+      </div>
+    </SmoothScroll>
   </FadeIn>
 );
 

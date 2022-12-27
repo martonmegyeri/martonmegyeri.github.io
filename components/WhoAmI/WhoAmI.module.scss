@@ -17,45 +17,36 @@
 
     p {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 
   .secondPart {
     display: flex;
     justify-content: space-between;
+    gap: 5vw;
+    width: 75%;
+    margin-left: auto;
 
-    .photoWrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      width: var(--golden-ratio-shorter);
-      height: 700px;
-      margin-top: 10vw;
-      overflow: hidden;
-
-      .photo {
-        max-width: 100%;
-        aspect-ratio: 16 / 10;
-      }
-
-      .label {
-        position: absolute;
-        top: 0;
-        left: -8%;
-        font-size: 0.5rem;
-        writing-mode: vertical-lr;
-        transform: rotate(-180deg);
-      }
+    p {
+      margin-top: 0;
+      font-size: 0.9rem;
+      width: 50%;
     }
+  }
 
-    .text {
-      width: var(--golden-ratio-shorter);
+  .photo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: calc(90% - (80% * 0.25));
+    margin: 5vw 0 0 auto;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
 
-      p {
-        margin-top: 0;
-        font-size: 1.2rem;
-      }
+    .parallaxWrapper {
+      width: 130%;
+      height: 130%;
     }
   }
 }

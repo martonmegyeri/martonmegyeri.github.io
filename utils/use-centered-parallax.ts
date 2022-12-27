@@ -14,7 +14,7 @@ export default function useCenteredParallax(ref: RefObject<HTMLElement>, { offse
   const { scrollY } = useScroll();
   const [{ start, end }, setBoundaries] = useState({ start: 0, end: 0 });
   const yRange = useTransform(scrollY, [start, end], [offset, -offset]);
-  const ySpring = useSpring(yRange, { stiffness: 500, damping: 50 });
+  const ySpring = useSpring(yRange, { stiffness: 200, damping: 40 });
 
   useEffect(() => {
     if (prefersReducedMotion) return;
