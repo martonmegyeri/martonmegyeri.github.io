@@ -11,8 +11,10 @@ const SmoothScroll = ({ children }: Props) => {
   const [childrenHeight, setChildrenHeight] = useState(0);
   const { scrollY } = useScroll();
   // As scrollY changes between 0px and the scrollable height, create a negative scroll value
-  const transform = useTransform(scrollY, [0, childrenHeight], [0, -childrenHeight]);
-  const spring = useSpring(transform, { stiffness: 200, damping: 40 });
+  const transformedY = useTransform(scrollY, [0, childrenHeight], [0, -childrenHeight]);
+  const springY = useSpring(transformedY, { stiffness: 200, damping: 40 });
+
+  console.log(scrollY);
 
   // Observe when browser is resizing
   useIsomorphicLayoutEffect(() => {
@@ -25,7 +27,7 @@ const SmoothScroll = ({ children }: Props) => {
 
   return (
     <>
-      <motion.div ref={scrollContainerRef} style={{ y: spring }} className={styles.scrollContainer}>
+      <motion.div ref={scrollContainerRef} style={{ y: springY }} className={styles.scrollContainer}>
         {children}
       </motion.div>
       {/* Blank div that has the height of the children's content. */}
